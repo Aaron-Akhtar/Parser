@@ -6,7 +6,7 @@ import java.io.FileReader;
 
 public class Dbp {
 
-    protected static final File target = new File("./imesh.txt");
+    protected static final File target = new File("./target.txt");
     protected static final File output = new File("./output.txt");
     protected static final int max = 10000;
     protected static volatile int running = 0;
