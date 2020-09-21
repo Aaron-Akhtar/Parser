@@ -9,7 +9,7 @@ public class DbpRunn implements Runnable{
         try(PrintWriter writer = new PrintWriter(new FileWriter(Dbp.output, true), true)){
             writer.write(s);
         }catch (Exception e){
-
+            e.printStackTrace();
         }
     }
 
@@ -23,8 +23,10 @@ public class DbpRunn implements Runnable{
 
     @Override
     public void run() {
+        Dbp.running++;
         String[] line = this.line.split(":");
         write(line[1] + ":" + line[3] + ":" + line[2] + "\n");
         System.out.println(line[1] + ":" + line[3] + ":" + line[2] + " -        ["+num+"] \n");
+        Dbp.running--;
     }
 }
